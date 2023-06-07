@@ -1,0 +1,9 @@
+version: '3.0'
+
+
+services:
+  finalProject:
+    image: jh0912/ossp_week12:3.0
+    build: .
+    ports:
+    - "80:80"

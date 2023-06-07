@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>main page</title>
+    <script>
+        function validateForm(){
+            var name=document.getElementById('name').value;
+            var StudentNumber=document.getElementById('StudentNumber').value;
+            var Major=document.getElementById('major').value;
+            var email_id=document.getElementById('email_id').value;
+            var email_addr=document.getElementById('email_addr').value;
+
+            if (!name|| !StudentNumber || !Major || !email_id|| !email_addr){
+                alert('필수 정보를 다 입력해주세요!');
+                return false;
+            }
+            console.log(name+StudentNumber)
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form method="POST" id="authForm" action='/submit' onsubmit="return validateForm()">
+        <p><b>* Name</b> <input type="'text" id='name'name="name"/> </p>
+        <p><b>* Student Number</b> <input type='text' id='StudentNumber' name='StudentNumber' /></p>
+        <!--성별-->
+        <!--name은 식별하기 위해 사용-->
+        <p><b>* Major</b> <input type='text' id='major' name='major'/></p>
+        <p><b>* Email</b> <input type='text'id='email_id' name='email_id'> @
+            <select name="email_addr" id="email_addr">
+                <option value="">선택</option>
+                <option value="naver.com">naver.com</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+            </select>
+        </p>
+        
+        <p>Gender</p>
+        <p><input type='radio' value='Male' name='Gender'/>Male
+        <input type='radio' value='Female' name='Gender'/>Female</p>
+
+        <p>Programming Languages</p>
+        <label><input type='checkbox' name='Python'>Python</label>
+        <label><input type='checkbox' name='Java'>Java</label>
+        <label><input type='checkbox' name='HTML'>HTML</label>
+        <label><input type='checkbox' name='C++'>C++</label>
+
+        <p><button type='submit' value="submit">submit</button></p>
+        
+    </form>
+   
+    
+    
+</body>
+</html>

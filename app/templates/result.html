@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <form method="POST">
+        <table border='1'>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>학번</th>
+                    <th>전공</th>
+                    <th>이메일</th>
+                    <th>성별</th>
+                    <th>프로그래밍 언어</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for data in result %}
+                <tr>
+                    <td>{{ data[0] }}</td>
+                    <td>{{ data[1] }}</td>
+                    <td>{{ data[2] }}</td>
+                    <td>{{ data[3] }}</td>
+                    <td>{{ data[4] }}</td>
+                    <td>{{ data[5] }}</td>
+                    <td><label for = "{{ data[1] }}"></label>
+                        <input type='checkbox' id="{{ data[1] }}" name='{{ data[1] }}'
+                            value='{{ data[1] }}'>
+                    </td>
+
+                </tr>
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+      
+        <button type="submit">Delete row</button>
+        
+        
+        
+
+        
+        <button type="button" onclick="location.href='/'">Add Row</button>
+      
+
+        <button type="submit"  name="action" value="reset" >Home</button>
+       
+
+        
+
+
+    </form>
+</body>
+
+</html>
